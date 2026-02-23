@@ -8,6 +8,7 @@ public class WildlifeSimulator {
     
     public WildlifeSimulator(int maxSpecies) {
         //TODO
+        species = new Species[maxSpecies];
     }
     
     /**
@@ -15,6 +16,7 @@ public class WildlifeSimulator {
      */
     public void addSpecies(Species s) {
         //TODO
+        species[speciesCount] = s;
     }
     
     /**
