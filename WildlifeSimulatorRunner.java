@@ -12,11 +12,29 @@ import java.util.*;
  */
 public class WildlifeSimulatorRunner {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // Create simulator with capacity for 20 species
-        
+        WildlifeSimulator simulator = new WildlifeSimulator(20);
+
         
         // Load species data from CSV
+        File file = new File("species-data.csv");
+        Scanner s = new Scanner(file);
+        s.nextLine();
+        while(s.hasNextLine()){
+            String line = s.nextLine();
+            String[] pieces = line.split(",");
+            String spName = pieces[0];
+            int pop = Integer.parseInt(pieces[1]);
+            double birthRate = Double.parseDouble(pieces[2]);
+            double deathRate = Double.parseDouble(pieces[3]);
+            int habCap = Integer.parseInt(pieces[4]);
+            String loc = pieces[5];
+            Species temp = new Species(spName, pop, birthRate, deathRate, habCap, loc);
+            simulator.addSpecies(temp);
+        }
+        
+        
         
         
         System.out.println("\n========================================");
@@ -27,7 +45,7 @@ public class WildlifeSimulatorRunner {
         // Display initial populations
         System.out.println("INITIAL POPULATIONS:");
         System.out.println("------------------");
-        
+        System.out.println(simulator);
         
         // Run simulation for 10 years and record data year-by-year
         int simulationYears = 10;
