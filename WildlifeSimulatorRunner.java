@@ -14,7 +14,7 @@ public class WildlifeSimulatorRunner {
     
     public static void main(String[] args) throws IOException{
         // Create simulator with capacity for 20 species
-        WildlifeSimulator simulator = new WildlifeSimulator(20);
+        WildlifeSimulator simulator = new WildlifeSimulator(10);
 
         
         // Load species data from CSV
@@ -48,17 +48,20 @@ public class WildlifeSimulatorRunner {
         System.out.println(simulator);
         
         // Run simulation for 10 years and record data year-by-year
-        int simulationYears = 10;
+        int simulationYears = 1;
+        simulator.simulate(simulationYears);
         
         
         // Display final populations
-        
+        System.out.println(simulator);
         
         // Display statistics
         System.out.println("\n\nSIMULATION STATISTICS:");
         System.out.println("------------------");
         int mostPopulous = simulator.getMostPopulousIndex();
         int mostEndangered = simulator.getMostEndangeredIndex();
+        System.out.println("Most Populous: " + simulator.getSpecies(mostPopulous));
+        System.out.println("Most Endangered: " + simulator.getSpecies(mostEndangered));
         
         
                 

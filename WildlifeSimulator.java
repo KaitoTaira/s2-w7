@@ -43,8 +43,11 @@ public class WildlifeSimulator {
     /**
      * Get species at given index
      */
-    public Species getSpecies(int index) {
+    public Species getSpecies(int index) throws IllegalArgumentException{
         //TODO
+        if(index < 0 || index > this.species.length){
+            throw new IllegalArgumentException();
+        }
         return species[index];
     }
     
@@ -80,7 +83,13 @@ public class WildlifeSimulator {
      */
     public int getMostPopulousIndex() {
         //TODO
-        return -1;
+        int maxIndex = 0;
+        for(int i = 0; i < species.length - 1; i++){
+            if(species[i].getPopulation() > species[maxIndex].getPopulation()){
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
     }
     
     /**
@@ -88,7 +97,13 @@ public class WildlifeSimulator {
      */
     public int getMostEndangeredIndex() {
         //TODO
-        return -1;
+        int minIndex = 0;
+        for(int i = 0; i < species.length - 1; i++){
+            if(species[i].getPopulation() < species[minIndex].getPopulation()){
+                minIndex = i;
+            }
+        }
+        return minIndex;
     }
     
     public int getSpeciesCount() {

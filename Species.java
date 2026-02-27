@@ -58,7 +58,18 @@ public class Species {
      */
     public void simulateYear() {
         //TODO
-        
+        // double births = population * birthRate;
+        // double deaths = population * deathRate;
+        // double newPopulation = population + (births - deaths);
+        double delta = population * (birthRate - deathRate);
+        population += delta;
+        if(population > habitatCapacity){
+            population = habitatCapacity;
+        }
+        if(population < 0){
+            population = 0;
+        }
+        System.out.println("Simulate one year: " + this.name);
     }
     
     /**
