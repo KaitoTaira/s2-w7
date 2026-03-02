@@ -69,7 +69,6 @@ public class Species {
         if(population < 0){
             population = 0;
         }
-        System.out.println("Simulate one year: " + this.name);
     }
     
     /**

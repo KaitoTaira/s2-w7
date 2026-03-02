@@ -48,7 +48,7 @@ public class WildlifeSimulatorRunner {
         System.out.println(simulator);
         
         // Run simulation for 10 years and record data year-by-year
-        int simulationYears = 1;
+        int simulationYears = 100;
         simulator.simulate(simulationYears);
         
         
