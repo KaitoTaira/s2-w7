@@ -1,0 +1,12 @@
+Year: 100
+
+African Elephant: 500,000 (Location: Africa)
+Black Rhino: 774 (Location: Africa)
+Giant Panda: 3,000 (Location: Asia)
+Grizzly Bear: 112 (Location: North America)
+Gray Wolf: 250,000 (Location: North America & Europe)
+Sumatran Tiger: 0 (Location: Indonesia)
+Mountain Gorilla: 336 (Location: Central Africa)
+Humpback Whale: 200,000 (Location: Global Oceans)
+African Lion: 7,291 (Location: Africa)
+Sea Turtle: 0 (Location: Global Oceans)

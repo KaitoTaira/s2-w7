@@ -25,10 +25,33 @@ public class WildlifeSimulator {
     public void simulateYear() {
         //TODO
         for(Species s: species){
+            if(s!=null)
             s.simulateYear();
         }
 
     }
+
+    public void writeYear(int year) {
+    String filename = "year_" + year + ".txt";
+
+    try (java.io.BufferedWriter writer =
+             new java.io.BufferedWriter(
+                 new java.io.FileWriter(filename))) {
+
+        writer.write("Year: " + year);
+        writer.newLine();
+        writer.newLine();
+
+        for (int i = 0; i < speciesCount; i++) {
+            writer.write(species[i].toString());
+            writer.newLine();
+        }
+
+    } catch (java.io.IOException e) {
+        System.out.println("Error writing file: " + filename);
+        e.printStackTrace();
+    }
+}
     
     /**
      * Simulate multiple years
@@ -37,6 +60,7 @@ public class WildlifeSimulator {
         //TODO
         for(int i = 0; i < years; i++){
             simulateYear();
+            writeYear(years);
         }
     }
     
